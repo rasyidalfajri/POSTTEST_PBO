@@ -62,7 +62,7 @@ public class Rafaalpaper {
         } else {
             System.out.println("List Data Wallpaper:");
             for (String item : data) {
-                System.out.println(item);
+                System.out.println("=>> " + item);
             }
         }
     }
