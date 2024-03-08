@@ -1,17 +1,20 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class Rafaalpaper {
-    // ArrayList untuk menyimpan data
+
     private static ArrayList<String> data = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        // Menambahkan beberapa data saat program dimulai
+        data.add("Wallpaper Tema Abstrak");
+        data.add("Wallpaper Tema Alam");
+        data.add("Wallpaper Tema Angkasa");
+
         boolean exit = false;
 
         while (!exit) {
-            // Menampilkan menu
-            System.out.println("\nMenu:");
+            System.out.println("\nMenu Pendataan Toko Wallpaper 'Rafaalpaper':");
             System.out.println("1. Tambah Data Wallpaper");
             System.out.println("2. Tampilkan Data Wallpaper");
             System.out.println("3. Update Data Wallpaper");
@@ -19,11 +22,9 @@ public class Rafaalpaper {
             System.out.println("5. Exit Program");
             System.out.print(">> : ");
             
-            // Membaca pilihan pengguna
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Membersihkan newline character dari buffer
+            scanner.nextLine(); 
 
-            // Memproses pilihan pengguna
             switch (choice) {
                 case 1:
                     tambahData();
@@ -48,7 +49,6 @@ public class Rafaalpaper {
         System.out.println("Terimakasih Telah Menggunakan Program :D");
     }
 
-    // Method untuk menambahkan data ke ArrayList
     private static void tambahData() {
         System.out.print("Masukkan Data Wallpaper Baru: ");
         String newData = scanner.nextLine();
@@ -56,7 +56,6 @@ public class Rafaalpaper {
         System.out.println("Data Wallpaper berhasil ditambahkan!");
     }
 
-    // Method untuk menampilkan data dari ArrayList
     private static void tampilkanData() {
         if (data.isEmpty()) {
             System.out.println("Tidak ada data wallpaper/Kosong");
@@ -68,7 +67,6 @@ public class Rafaalpaper {
         }
     }
 
-    // Method untuk memperbarui data dalam ArrayList
     private static void perbaruiData() {
         if (data.isEmpty()) {
             System.out.println("Tidak ada data wallpaper/Kosong");
@@ -76,7 +74,7 @@ public class Rafaalpaper {
             tampilkanData();
             System.out.print("Pilih Nomor Wallpaper Yang ingin DiUpdate(Dimulai dari 0) : ");
             int index = scanner.nextInt();
-            scanner.nextLine(); // Membersihkan newline character dari buffer
+            scanner.nextLine(); 
             if (index >= 0 && index < data.size()) {
                 System.out.print("Masukkan Data Wallpaper Baru : ");
                 String newData = scanner.nextLine();
@@ -88,7 +86,6 @@ public class Rafaalpaper {
         }
     }
 
-    // Method untuk menghapus data dari ArrayList
     private static void hapusData() {
         if (data.isEmpty()) {
             System.out.println("Tidak ada data wallpaper/Kosong");
@@ -96,7 +93,7 @@ public class Rafaalpaper {
             tampilkanData();
             System.out.print("Pilih Nomor Wallpaper Yang ingin Dihapus(Dimulai dari 0) : ");
             int index = scanner.nextInt();
-            scanner.nextLine(); // Membersihkan newline character dari buffer
+            scanner.nextLine(); 
             if (index >= 0 && index < data.size()) {
                 data.remove(index);
                 System.out.println("Data Wallpaper Berhasil Dihapus!");
@@ -106,3 +103,5 @@ public class Rafaalpaper {
         }
     }
 }
+
+
